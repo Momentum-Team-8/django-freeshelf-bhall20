@@ -1,9 +1,4 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-<div>
-{% for book in books %}
+{% extends "base.html" %}{ % block content % }{ % for book in books % }
 <div class="card">
     {% if book.title %}
         <p>{{book.title}}</p>
@@ -12,6 +7,13 @@
         <p><a href="{{book.url}}">{{book.url}}</a></p>
     {% endif %}
 </div>
-{% endfor %}
+
+<div>
+    <p>
+        {% for category in book.categories.all %}
+        <li><a href={% url 'show_categories' slug=categories.slug %}>{{ categories.name }}</a></li>
+
+</p>
+
 </div>
-{% endblock %}
+{% endfor %}

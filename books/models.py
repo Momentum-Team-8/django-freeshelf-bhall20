@@ -23,3 +23,10 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+class Categories(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=75)
+
+    def __str__(self):
+        return self.name

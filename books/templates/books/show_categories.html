@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> {{ categories.name }} </h1>
+<hr>
+{% for book in books %}
+<h2>{{ book.title }}</h2>
+<p>{{ book.author }}</p>
+{% endfor %}
+
+
+{% endblock content %}
